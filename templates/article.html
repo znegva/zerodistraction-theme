@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block head %}
+  {% if article.keywords %}
+    <meta name="keywords" contents="{{article.keywords}}" />
+  {% endif %}
+  {% if article.description %}
+    <meta name="description" contents="{{article.description}}" />
+  {% endif %}
+  {% for tag in article.tags %}
+    <meta name="tags" contents="{{tag}}" />
+  {% endfor %}
+{% endblock %}
+{% block title %}
+    {{ SITENAME }} - {{article.title }}
+{% endblock title %}
+
+
+{% block content %}
+<section id="content" class="body">
+  <div id="article_header">
+    <span class="small">
+        {{ article.locale_date }}
+        in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+        {% if article.modified %}
+            &nbsp;|&nbsp; updated: {{ article.modified }}
+        {% endif %}
+            
+        {% if article.tags %}
+            &nbsp;|&nbsp; tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a> {% endfor %}
+        {% endif %}
+        
+        {% if article.status != "draft" %}
+            &nbsp;|&nbsp; share:
+            <a href="mailto:?subject={{article.title}}&body={{ SITEURL }}/{{article.url}}" title="E-Mail"><i class="fa fa-envelope-o"></i></a> &nbsp;
+            <a href="http://twitter.com/home?status={{article.title}}: {{ SITEURL }}/{{article.url}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
+            <a href="https://plus.google.com/share?url={{ SITEURL }}/{{article.url}}" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a>&nbsp;
+            <a href="http://www.facebook.com/sharer.php?u={{ SITEURL }}/{{article.url}}&t={{article.title}}" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a>
+        {% endif %}
+        
+        {% import 'translations.html' as translations with context %}
+        {{ translations.translations_for(article) }}
+    </span>
+    <h1 class="entry-title">
+      {{ article.title }}
+    </h1>
+
+  </div>
+
+  <div class="entry-content">
+    {{ article.content }}
+    
+    {% if article.album %}
+    <div class="thumbs">
+    {% for image in article.galleryimages %}
+        <a href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image }}">
+            <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_square/{{ image }}">
+        </a>
+    {% endfor %}
+    </div>
+    <script> 
+        $('.thumbs a').touchTouch(); 
+    </script>
+    <!-- TODO: add nice JS libary for showing the images !-->
+    {% endif %}
+
+    
+  </div><!-- /.entry-content -->
+</section>
+{% endblock %}

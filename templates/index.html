@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section id="content">
+
+
+<ul id="post-list">
+{% for article in articles_page.object_list %}
+        <li>
+            <span class="small">
+            {{ article.locale_date }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
+            </span>
+            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+                <h3>{{ article.title }}</h3>
+            </a>
+        </li>
+{% endfor %}
+</ul><!-- /#posts-list -->
+{% include 'pagination.html' %}
+</section><!-- /#content -->
+{% endblock content %}
