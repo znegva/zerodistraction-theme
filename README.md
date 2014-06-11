@@ -1,6 +1,6 @@
 # zerodistraction
 
-_zerodistraction_ is a theme for [Pelican](http://alexis.notmyidea.org/pelican/).
+_zerodistraction_ is a theme for [Pelican](https://github.com/getpelican).
 The idea was to build a very simple theme without much distraction - just focus on the content. 
 
 ## good to know
