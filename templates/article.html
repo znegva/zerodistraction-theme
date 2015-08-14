@@ -29,7 +29,7 @@
             &nbsp;|&nbsp; tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a> {% endfor %}
         {% endif %}
         
-        {% if article.status != "draft" %}
+        {% if article.status != "draft" and not NO_SOCIAL_BUTTONS %}
             &nbsp;|&nbsp; share:
             <a href="mailto:?subject={{article.title}}&body={{ SITEURL }}/{{article.url}}" title="E-Mail"><i class="fa fa-envelope-o"></i></a> &nbsp;
             <a href="http://twitter.com/home?status={{article.title}}: {{ SITEURL }}/{{article.url}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
@@ -52,13 +52,27 @@
     {% if article.album %}
     <div class="thumbs">
     {% for image in article.galleryimages %}
-        <a href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image }}">
-            <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_square/{{ image }}">
+        <a href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}" title="{{image.title}}">
+            <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_square/{{ image.src }}"
+                 alt="{{image.alt}}"
+                 title="{{image.title}}">
         </a>
     {% endfor %}
     </div>
     <script> 
-        $('.thumbs a').touchTouch(); 
+        $('.thumbs a').imageLightbox({
+            allowedTypes:   'png|jpg|jpeg|gif',     // string;
+            animationSpeed: 250,                    // integer;
+            preloadNext:    true,                   // bool;            silently preload the next image
+            enableKeyboard: true,                   // bool;            enable keyboard shortcuts (arrows Left/Right and Esc)
+            quitOnEnd:      false,                  // bool;            quit after viewing the last image
+            quitOnImgClick: false,                  // bool;            quit when the viewed image is clicked
+            quitOnDocClick: true,                   // bool;            quit when anything but the viewed image is clicked
+            onStart:        function(){overlayOn(); },                  // function/bool;   calls function when the lightbox starts
+            onEnd:          function(){overlayOff(); },                 // function/bool;   calls function when the lightbox quits
+            onLoadStart:    false,                  // function/bool;   calls function when the image load begins
+            onLoadEnd:      false                   // function/bool;   calls function when the image finishes loading
+        });
     </script>
     <!-- TODO: add nice JS libary for showing the images !-->
     {% endif %}
