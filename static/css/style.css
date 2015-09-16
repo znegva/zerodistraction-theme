@@ -66,7 +66,7 @@ header h2{
 }
 #content img{
     display: inline;
-    max-width: 95%;
+    max-width: 99%;
     margin-top: 5px;
     margin-right: 5px;
     box-shadow: 1px 1px 2px 2px #555;
@@ -104,6 +104,14 @@ blockquote{
 }
 td{
     padding-right: 5px;
+}
+
+.thumbs{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer{
