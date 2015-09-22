@@ -68,8 +68,10 @@ header h2{
     display: inline;
     max-width: 99%;
     margin-top: 5px;
-    margin-right: 5px;
-    box-shadow: 1px 1px 2px 2px #555;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    
+    float:left;
 }
 #post-list{
     list-style-type: none;
@@ -107,11 +109,19 @@ td{
 }
 
 .thumbs{
+    clear: both;
+    margin-top: 15px;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+.thumbs img{
+    margin-top: 5px !important;
+    margin-right: 5px !important;
+    box-shadow: 1px 1px 2px 2px #555;
 }
 
 footer{
