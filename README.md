@@ -26,7 +26,7 @@ The idea was to build a very simple theme without much distraction - just focus 
     }
     ```
     
- * to display the large version of the images in galleries, [touchTouch](http://tutorialzine.com/2012/04/mobile-touch-gallery/)
+ * to display the large version of the images in galleries, [Image Lightbox from Osvaldas Valutis](http://osvaldas.info/image-lightbox-responsive-touch-friendly)
  is used, please pay credit if you keep it.
  If you want another _lightbox_ you have to edit `article.html`
  * there will be _social_ links (nothing more!) for every article, icons from
