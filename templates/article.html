@@ -52,8 +52,9 @@
     {% if article.album %}
     <div class="thumbs">
     {% for image in article.galleryimages %}
-        <a href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}" title="{{image.title}}">
-            <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_square/{{ image.src }}"
+        <a  href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}" 
+            title="{{image.title}}">
+            <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_wide/{{ image.src }}"
                  alt="{{image.alt}}"
                  title="{{image.title}}">
         </a>
@@ -74,7 +75,21 @@
             onLoadEnd:      false                   // function/bool;   calls function when the image finishes loading
         });
     </script>
-    <!-- TODO: add nice JS libary for showing the images !-->
+    {% endif %}
+    
+    {% if article.copyright %}
+    <div id="copyrights">
+        <table>
+            <tr>
+                <td valign="top">
+                    <i class="fa fa-copyright"></i>
+                </td>
+                <td>
+                    {{ article.copyright }}
+                </td>
+            </tr>
+        </table>
+    </div>
     {% endif %}
 
     
