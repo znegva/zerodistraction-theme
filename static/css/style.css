@@ -5,7 +5,7 @@ html {
 }
 body{
     /*font-family: 'DejaVu Sans mono', mono;*/
-    font-family: "DejaVu Sans", Verdana, sans-serif;
+    font-family: "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, sans-serif;
     font-size: 10pt;
     line-height: 1.5;
     color: #555;
@@ -27,12 +27,23 @@ a {
     color: #555;
 }
 
+h1,h2,h3,h4{
+    font-family: "Lato", "Open Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, sans-serif;
+}
+
 header{
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
 }
-header h1{
+header h1, header h2{
+    display: inline;
     margin-bottom: 0;
+}
+h1{
+    font-size: 1.7em;
+}
+h2{
+    font-size: 1.5em
 }
 header a{
     text-decoration: none;
@@ -44,19 +55,12 @@ header .nav{
     display: inline;
     float: right;
     padding-left: 0px;
-    margin: 0 0 0 0;
     border-bottom: 1px solid #ddd;
     text-align: right;
 }
 header .nav li{
     padding-left: 20px;
     display:inline-block;
-}
-/* our "sub heading" e.g. Articles in Category xyz*/
-header h2{
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 25px;
 }
 
 #content{
