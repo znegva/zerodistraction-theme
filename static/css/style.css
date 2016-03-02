@@ -26,36 +26,31 @@ body{
 a {
     color: #555;
 }
-a:hover{
-    color: #999;
-}
 
 header{
     margin-top: 20px;
     margin-bottom: 30px;
 }
 header h1{
-    display:inline;
-        margin-bottom: 0;
+    margin-bottom: 0;
 }
 header a{
     text-decoration: none;
     color: #555;
 }
 header .nav{
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     list-style-type: none;
-    display: block;
+    display: inline;
+    float: right;
     padding-left: 0px;
     margin: 0 0 0 0;
-    /*border-top: 1px solid #ddd; */
     border-bottom: 1px solid #ddd;
     text-align: right;
 }
 header .nav li{
     padding-left: 20px;
     display:inline-block;
-    /*float: left;*/
 }
 /* our "sub heading" e.g. Articles in Category xyz*/
 header h2{
