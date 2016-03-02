@@ -10,8 +10,8 @@ body{
     line-height: 1.5;
     color: #555;
     
-    max-width: 800px;
-    min-width: 400px;
+    max-width: 900px;
+    min-width: 300px;
     margin-left: auto;
     margin-right: auto;
     
@@ -25,6 +25,9 @@ body{
 
 a {
     color: #555;
+}
+a:hover{
+    color: #999;
 }
 
 header{
@@ -118,22 +121,48 @@ td{
     justify-content: space-between;
     align-items: center;
 }
-.thumbs img{
-    margin-top: 5px !important;
-    margin-right: 5px !important;
-    box-shadow: 1px 1px 2px 2px #555;
-    width: 100%;
-}
-
 .thumbs a{
-    width: 49.5%;
+    width: 33%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+    .thumbs a{
+        width: 49.5%;
+    }
+}
+@media (max-width: 300px) {
     .thumbs a{
         width: 100%;
     }
 }
+.thumbs a img{
+    margin: 0 !important;
+    margin-top: 5px !important;
+    width: 100%;
+    max-width: 100%;
+
+    -webkit-filter:     grayscale(100%);
+    -moz-filter:        grayscale(100%);
+    -o-filter:          grayscale(100%);
+    -ms-filter:         grayscale(100%);
+    filter:             grayscale(100%); 
+
+    -webkit-transition: all 0.5s ease;
+    -moz-transition:    all 0.5s ease;
+    -o-transition:      all 0.5s ease;
+    -ms-transition:     all 0.5s ease;
+    transition:         all 0.5s ease;
+}
+
+.thumbs a img:hover {
+    -webkit-filter: grayscale(0%);
+       -moz-filter: grayscale(0%);
+         -o-filter: grayscale(0%);
+        -ms-filter: grayscale(0%);
+            filter: grayscale(0%); 
+}
+
+
 
 #copyrights{
     margin-top: 15px;

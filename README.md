@@ -20,17 +20,15 @@ The idea was to build a very simple theme without much distraction - just focus 
     THUMBNAIL_KEEP_NAME = True
     THUMBNAIL_KEEP_DIR_STRUCT = True
     THUMBNAIL_SIZES = {
-        'thumbnail_square': '259',
-        'thumbnail_wide': '389x?',
-        'thumbnail_tall': '?x250',
+        'thumbnail_rectangle' : '295x200',
     }
     ```
     
  * to display the large version of the images in galleries, [Image Lightbox from Osvaldas Valutis](http://osvaldas.info/image-lightbox-responsive-touch-friendly)
  is used, please pay credit if you keep it.
  If you want another _lightbox_ you have to edit `article.html`
- * there will be _social_ links (nothing more!) for every article, icons from
- [Font Awesome by Dave Gandy](http://fontawesome.io) are used for this, please pay credit if you also use them
+ * there will be _social_ links (just links!) for every article, icons from
+ [Font Awesome by Dave Gandy](http://fontawesome.io) are used for this, please pay credit if you also use them. If you dont want to use them, just add `NO_SOCIAL_BUTTONS = True` to your `pelicanconf.py`
  
 ## Screenshot
 ![a screenshot of the theme](screenshot.jpg?raw=true)
