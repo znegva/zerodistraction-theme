@@ -29,8 +29,9 @@ The idea was to build a very simple theme without much distraction - just focus 
  If you want another _lightbox_ you have to edit `article.html`
  * there will be _social_ links (just links!) for every article, icons from
  [Font Awesome by Dave Gandy](http://fontawesome.io) are used for this, please pay credit if you also use them. If you dont want to use them, just add `NO_SOCIAL_BUTTONS = True` to your `pelicanconf.py`
+ * if necessary you can show some copyright hints at the bottom of the page by including a `copyright` metadata-field in your article file.
  
 ## Screenshot
-![a screenshot of the theme](screenshot.jpg?raw=true)
+![a screenshot of the theme](screenshot_new.jpg?raw=true)
 
 
