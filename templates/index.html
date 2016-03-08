@@ -6,12 +6,29 @@
 <ul id="post-list">
 {% for article in articles_page.object_list %}
         <li>
-            <span class="small">
-            {{ article.locale_date }} in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-            </span>
-            <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
-                <h3>{{ article.title }}</h3>
-            </a>
+        	{% if SHOW_TEASER_IMAGES %}
+        	<div class="teaserimage">
+        		{% if article.album %}
+				<img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_minisquare/{{ article.galleryimages[0].src }}"
+                 	alt="{{article.galleryimages[0].alt}}"
+                 	title="{{article.galleryimages[0].title}}">
+                {% else %}
+                <img src="{{ SITEURL }}/theme/dummy.jpg">
+        		{% endif %}
+        	</div>
+        	{% endif %}
+        	<div class="articleinfos">
+            	<span class="small">
+            	{{ article.locale_date }} in 
+            	<a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>	
+            	</span>
+            	<a href="{{ SITEURL }}/{{ article.url }}" 
+            		rel="bookmark" 
+            		title="Permalink to {{ article.title|striptags }}">
+            	    <h3>{{ article.title }}</h3>
+            	</a>
+			</div>
+            
         </li>
 {% endfor %}
 </ul><!-- /#posts-list -->

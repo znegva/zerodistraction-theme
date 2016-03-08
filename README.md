@@ -21,6 +21,7 @@ The idea was to build a very simple theme without much distraction - just focus 
     THUMBNAIL_KEEP_DIR_STRUCT = True
     THUMBNAIL_SIZES = {
         'thumbnail_rectangle' : '295x200',
+        'thumbnail_minisquare': '50x50',
     }
     ```
     
@@ -30,8 +31,14 @@ The idea was to build a very simple theme without much distraction - just focus 
  * there will be _social_ links (just links!) for every article, icons from
  [Font Awesome by Dave Gandy](http://fontawesome.io) are used for this, please pay credit if you also use them. If you dont want to use them, just add `NO_SOCIAL_BUTTONS = True` to your `pelicanconf.py`
  * if necessary you can show some copyright hints at the bottom of the page by including a `copyright` metadata-field in your article file.
+ * you can show a small round preview image (avatar) in front of each article link by adding `SHOW_TEASER_IMAGES = True` to your `pelicanconf.py`. The `thumbnail_minisquare` thumbnails of the first image of the gallery will be used for this, so this option makes sense if you regularly use galleries.
  
-## Screenshot
+## Screenshots
+### Article
 ![a screenshot of the theme](screenshot_new.jpg?raw=true)
 
+### Article list, default
+![a screenshot of the theme](screenshot_list_default.jpg?raw=true)
 
+### Article list, Avatars
+![a screenshot of the theme](screenshot_list_avatars.jpg?raw=true)
