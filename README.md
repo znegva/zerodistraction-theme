@@ -32,6 +32,7 @@ The idea was to build a very simple theme without much distraction - just focus 
  [Font Awesome by Dave Gandy](http://fontawesome.io) are used for this, please pay credit if you also use them. If you dont want to use them, just add `NO_SOCIAL_BUTTONS = True` to your `pelicanconf.py`
  * if necessary you can show some copyright hints at the bottom of the page by including a `copyright` metadata-field in your article file.
  * you can show a small round preview image (avatar) in front of each article link by adding `SHOW_TEASER_IMAGES = True` to your `pelicanconf.py`. The `thumbnail_minisquare` thumbnails of the first image of the gallery will be used for this, so this option makes sense if you regularly use galleries.
+ * if you regularly use galleries you can also enable the optional thumbs-index-mode by setting `INDEX_USE_THUMBS = True` in your `pelicanconf.py` - again the first image of the gallery will be used
  
 ## Screenshots
 ### Article
@@ -42,3 +43,6 @@ The idea was to build a very simple theme without much distraction - just focus 
 
 ### Article list, Avatars
 ![a screenshot of the theme](screenshot_list_avatars.jpg?raw=true)
+
+### Article list, Thumb View
+![a screenshot of the theme](screenshot_index_thumbs.jpg?raw=true)

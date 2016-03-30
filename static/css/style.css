@@ -124,7 +124,7 @@ td{
     padding-right: 5px;
 }
 
-.thumbs{
+.thumbs, .indexthumbs{
     clear: both;
     margin-top: 15px;
     
@@ -134,21 +134,38 @@ td{
     justify-content: space-between;
     align-items: center;
 }
-.thumbs a{
+.thumbs a, .indexthumbs a{
     width: 33%;
 }
 
+.indexthumbs a{
+    position: relative;
+}
+.indexthumbs h3{
+    margin: 0 !important;
+    padding: 8px !important;
+}
+.indexthumbs .articleinfos{
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+
+}
+
 @media (max-width: 600px) {
-    .thumbs a{
+    .thumbs a, .indexthumbs a{
         width: 49.5%;
     }
 }
-@media (max-width: 300px) {
-    .thumbs a{
+@media (max-width: 340px) {
+    .thumbs a, .indexthumbs a{
         width: 100%;
     }
 }
-.thumbs a img{
+.thumbs a img, .indexthumbs a img{
     margin: 0 !important;
     margin-top: 5px !important;
     width: 100%;
@@ -167,7 +184,7 @@ td{
     transition:         all 0.5s ease;
 }
 
-.thumbs a img:hover {
+.thumbs a img:hover, .indexthumbs a img:hover {
     -webkit-filter: grayscale(0%);
        -moz-filter: grayscale(0%);
          -o-filter: grayscale(0%);
@@ -175,6 +192,10 @@ td{
             filter: grayscale(0%); 
 }
 
+.pagination{
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 
 #copyrights{
