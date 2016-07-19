@@ -20,17 +20,17 @@
   <div id="article_header">
     <span class="small">
         {{ article.locale_date }}
-        in <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a>
-        {% if article.modified %}
-            &nbsp;|&nbsp; updated: {{ article.modified }}
-        {% endif %}
-            
+        <a href="{{ SITEURL }}/{{ article.category.url }}">@{{ article.category }}</a>
         {% if article.tags %}
-            &nbsp;|&nbsp; tags: {% for tag in article.tags %}<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a> {% endfor %}
+            {% for tag in article.tags %}#<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag | escape }}</a> {% endfor %}
+        {% endif %}
+
+        {% if article.modified %}
+            (updated: {{ article.modified }})
         {% endif %}
         
         {% if article.status != "draft" and not NO_SOCIAL_BUTTONS %}
-            &nbsp;|&nbsp; share:
+            &nbsp; &nbsp;
             <a href="mailto:?subject={{article.title}}&body={{ SITEURL }}/{{article.url}}" title="E-Mail"><i class="fa fa-envelope-o"></i></a> &nbsp;
             <a href="http://twitter.com/home?status={{article.title}}: {{ SITEURL }}/{{article.url}}" target="_blank" title="Twitter"><i class="fa fa-twitter"></i></a>&nbsp;
             <a href="https://plus.google.com/share?url={{ SITEURL }}/{{article.url}}" target="_blank" title="Google+"><i class="fa fa-google-plus"></i></a>&nbsp;
