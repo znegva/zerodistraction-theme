@@ -196,6 +196,10 @@ td{
     padding-left: 10px;
     padding-right: 10px;
 }
+.paginator a{
+    font-size: 150%;
+    text-decoration: none;
+}
 
 
 #copyrights{
