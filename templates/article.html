@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 {% block head %}
-  {% if article.keywords %}
-    <meta name="keywords" contents="{{article.keywords}}" />
-  {% endif %}
+    <meta property="og:title" content="{{article.title }} - {{ SITENAME }}" />
   {% if article.description %}
-    <meta name="description" contents="{{article.description}}" />
+    <meta name="description" property="og:description" contents="{{article.description}}" />
   {% endif %}
+  {% if article.album %}
+    <meta property="og:image" content="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_minisquare/{{ article.galleryimages[0].src }}" />
+  {% endif %}
+
   {% for tag in article.tags %}
     <meta name="tags" contents="{{tag}}" />
   {% endfor %}
+  {% if article.keywords %}
+    <meta name="keywords" contents="{{article.keywords}}" />
+  {% endif %}
+
 {% endblock %}
 {% block title %}
-    {{ SITENAME }} - {{article.title }}
+     {{article.title }} - {{ SITENAME }}
 {% endblock title %}
 
 
