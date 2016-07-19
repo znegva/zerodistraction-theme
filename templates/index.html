@@ -6,7 +6,11 @@
     <div class="indexthumbs">
     {% for article in articles_page.object_list %}
         <a  href="{{ SITEURL }}/{{ article.url }}">
-            {% if article.album %}
+            {% if article.image %}
+            <img src="{{ SITEURL }}/images/thumbnail_rectangle/{{ article.image }}"
+                alt="{{article.description}}"
+                title="{{article.description}}">
+            {% elif article.album %}
             <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_rectangle/{{ article.galleryimages[0].src }}"
                 alt="{{article.galleryimages[0].alt}}"
                 title="{{article.galleryimages[0].title}}">

@@ -4,8 +4,10 @@
   {% if article.description %}
     <meta name="description" property="og:description" contents="{{article.description}}" />
   {% endif %}
-  {% if article.album %}
-    <meta property="og:image" content="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_minisquare/{{ article.galleryimages[0].src }}" />
+  {% if article.image %}
+    <meta property="og:image" content="{{ SITEURL }}/images/{{ article.image }}" />
+  {% elif article.album %}
+    <meta property="og:image" content="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ article.galleryimages[0].src }}" />
   {% endif %}
 
   {% for tag in article.tags %}
