@@ -68,12 +68,10 @@ header .nav li{
 }
 #content img{
     display: inline;
-    max-width: 99%;
+    max-width: 100%;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-right: 20px;
-    
-    float:left;
 }
 
 
