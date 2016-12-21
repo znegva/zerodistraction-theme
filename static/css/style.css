@@ -131,7 +131,7 @@ td{
     align-items: center;
 }
 .thumbs a, .indexthumbs a{
-    width: 33%;
+    width: 32.7%;
 }
 
 .indexthumbs a{
@@ -153,7 +153,7 @@ td{
 
 @media (max-width: 600px) {
     .thumbs a, .indexthumbs a{
-        width: 49.5%;
+        width: 49%;
     }
 }
 @media (max-width: 340px) {
