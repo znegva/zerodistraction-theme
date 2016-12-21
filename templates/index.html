@@ -12,8 +12,8 @@
                 title="{{article.description}}">
             {% elif article.album %}
             <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_rectangle/{{ article.galleryimages[0].src }}"
-                alt="{{article.galleryimages[0].alt}}"
-                title="{{article.galleryimages[0].title}}">
+                alt="{{article.description}}"
+                title="{{article.description}}">
             {% else %}
             <img src="{{ SITEURL }}/theme/dummy_rectangle.jpg">
             {% endif %}

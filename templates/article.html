@@ -63,8 +63,12 @@
         <a  href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}" 
             title="{{image.title}}">
             <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_rectangle/{{ image.src }}"
+            {% if image.alt and image.alt != ' ' %}
                  alt="{{image.alt}}"
+            {% endif %}
+            {% if image.title and image.title != ' ' %}
                  title="{{image.title}}">
+            {% endif %}
         </a>
     {% endfor %}
     </div>
