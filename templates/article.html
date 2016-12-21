@@ -60,8 +60,7 @@
     {% if article.album %}
     <div class="thumbs">
     {% for image in article.galleryimages %}
-        <a  href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}" 
-            title="{{image.title}}">
+        <a  href="{{ SITEURL }}/images/gallery/{{ article.album }}/{{ image.src }}">
             <img src="{{ SITEURL }}/images/gallery/{{ article.album }}/thumbnail_rectangle/{{ image.src }}"
             {% if image.alt and image.alt != ' ' %}
                  alt="{{image.alt}}"
